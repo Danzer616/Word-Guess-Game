@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>The Psychic Game</title>
+    </head>
+
+    <body>
+
+        <div>
+            <h1>The Psychic Game</h1>
+            <p>Guess what letter I'm thinking of!</p>
+            <p id="Wins-text"></p>
+            <p id="Losses-text"></p>
+            <p id="Guesses-left"></p>
+            <p id="Your Guesses So Far"></p>
+
+
+        </div>
+    
+        <script src="assets/javascript/game.js">
+
+        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        
+        var wins = 0;
+        var losses = 0;
+        var Guessesleft = 10;
+
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
+        var GuessesleftText = document.getElementById("Guessesleft-text");
+        var yourguessessofarText = document.getElementById("Yourguessessofartext");
+
+        document.onkeyup = function(event) {
+
+            var userGuess = event.key;
+
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+            if (userGuess === computerGuess) {
+                wins++; 
+                
+                // I tried to write an "if" statement that would give the user and +1 score on their "wins" category.
+
+                // The next "if" statement would gererate or print a "+1" score the user's "losses" category if the user guessed incorrectly.
+
+                // The next "if" or "else" statement would decrease the number in the "guesses left" category if the user guesses incorrectly.
+
+            
+            winsText.textContent = "Wins:" + wins;
+            lossesText.textContent = "Losses:" + losses;
+            GuessesleftText.textContent = "Guesses left:";
+            yourguessessofarText.textContent = "Your guesses so far:" === userGuess;
+            }
+        };
+
+    
+    
+        </script>
+    
+    </body>
+
+</html>
